@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mkdir -p bin
+
+# Running on a puppet managed host
+if [ -d /usr/share/rbenv/shims ]; then
+  export PATH=/usr/share/rbenv/shims:$PATH
+  export RBENV_VERSION=$(cat .ruby-version)
+fi
+
+bundle check 2>&1 > /dev/null || bundle install --local --path vendor/gems $extra_opts

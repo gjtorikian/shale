@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -d /usr/share/rbenv/shims ]; then
+  export PATH=/usr/share/rbenv/shims:$PATH
+  export RBENV_VERSION=$(cat .ruby-version)
+fi
+
+export RACK_ENV=test
+export FAILBOT_BACKEND=memory
+script/bootstrap --local
+bundle exec rake assets:precompile

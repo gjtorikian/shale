@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body data-languages='["{{ page.language_tabs | join: '","' }}"]'>
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="assets/images/navbar.png">
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      {% if page.language_tabs %}
+        <div class="lang-selector">
+          {% for lang in page.language_tabs %}
+            <a href="#" data-language-name="{{ lang }}">{{ lang }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if page.search %}
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      {% endif %}
+      <div id="toc">
+      </div>
+      {% include toc_footer.html %}
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        {{ content }}
+      </div>
+      <div class="dark-box">
+        {% if page.language_tabs %}
+          <div class="lang-selector">
+            {% for lang in page.language_tabs do |lang| %}
+              <a href="#" data-language-name="{{ lang }}">{{ lang }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

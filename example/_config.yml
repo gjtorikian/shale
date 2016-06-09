@@ -1,0 +1,39 @@
+title: GraphQL Docs
+exclude:
+  - script
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - config.ru
+  - _config.dev.yml
+  - Procfile
+  - Rakefile
+  - README.md
+
+# Build settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+collections:
+  - guides
+
+sass:
+  sass_dir: assets/_sass
+  style: compressed
+
+# Plugins
+gems:
+  - jemoji
+  - jekyll-mentions
+
+jekyll_auth:
+  ssl: true

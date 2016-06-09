@@ -22,3 +22,15 @@ build/
 _yardoc
 doc/
 .idea/
+
+_site
+.env
+mkmf.log
+.DS_Store
+.sass-cache
+.jekyll-metadata
+
+/vendor/ruby
+/vendor/gems/
+/vendor/cache/ruby/
+/vendor/bundle/
